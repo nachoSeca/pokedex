@@ -1,0 +1,367 @@
+/* GLOBAL VAR */
+:root{
+    --color-font: #ffffff;
+    --color-pokemon-plant: #71cb89;
+    --color-pokemon-fire: #f7786b;
+    --color-pokemon-water: #76bdfe;
+    --color-pokemon-electric: #ffce4b;
+    --color-pokemon-normal: #a4acaf;
+    --color-pokemon-fighting: #d56723;
+    --color-pokemon-poison: #b97fc9;
+    --color-pokemon-ground: #dec16b;
+    --color-pokemon-flying: #3dc7ef;
+    --color-pokemon-psychic: #f366b9;
+    --color-pokemon-bug: #a4b787;
+    --color-pokemon-rock: #b6a136;
+    --color-pokemon-ghost: #735797;
+    --color-pokemon-dragon: #6f35fc;
+    --color-pokemon-dark: #705746;
+    --color-pokemon-steel: #b7b7ce;
+    --color-pokemon-fairy: #d685ad;
+    --color-background-statistics: #ffffff;
+    --color_bottom-tab: rgb(59, 74, 235);
+    --color-about-title: rgb(169, 169, 169);
+    --color-about-data: rgb(0, 0, 0);
+    --color-progressbar-red: #FA8072;
+    --color-progressbar-green: #008000;
+}
+
+.search {
+  --input-line: #cccccc;
+  --input-text-color: #808080;
+  --input-text-hover-color: transparent;
+  --input-border-color: #808080;
+  --input-border-hover-color: #999999;
+  --input-bg-color: #333333;
+  --search-max-width: 250px;
+  --search-min-width: 150px;
+  --border-radius: 5px;
+  --transition-cubic-bezier: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.container-fluid {
+    background-image: url(fondo-card.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* GENERAL CARD */
+.card{
+    width: 400px;
+    height: 700px;
+    background-image: url(grass.png);
+    margin-top: 50px;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+/* LOGO POKEMON */
+.logo_pokemon{
+    width: 250px;
+    margin-top: -160px;
+}
+
+/* LEFT CARD */
+
+.small-card{
+    width: 250px;
+    height: 130px;
+    background-color: var(--color-pokemon-dark);
+    color: var(--color-font);
+}
+
+.image_pokemon-left{
+    width: 100px;  
+}
+
+
+/* HEADER - ARROW AND HEART */
+.header{
+    border-radius: 30px 30px 0px 0px;
+    width: 100%;
+    height: 60px;
+}
+
+/* LEFT ARROW */
+.arrow {
+	--arrow-size: 1.5em;
+	--arrow-color: rgb(255,255,255);
+	--arrow-color-hover: rgba(255,255,255,0.5);
+	position: relative;
+	display: inline-flex;
+	vertical-align: middle;
+	width: var(--arrow-size);
+	height: var(--arrow-size);
+	overflow: hidden;
+    margin-top: 15px;
+	
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		box-sizing: border-box;
+		display: inline-block;
+		width: calc( var(--arrow-size) * .7071);
+		height: calc( var(--arrow-size) * .7071);
+		border-top: calc( var(--arrow-size) / 5 ) solid var(--arrow-color);
+		transition: all 150ms ease-in-out;
+	}
+	
+	&.left {
+		&::after {
+			left: calc( var(--arrow-size) / 5 );
+			border-left: calc( var(--arrow-size) / 5 ) solid var(--arrow-color);
+			transform-origin: top left;
+			rotate: -45deg;
+		}
+
+		&:hover::after {
+			box-shadow: calc( var(--arrow-size) / -8 ) calc( var(--arrow-size) / -8 ) 0 var(--arrow-color);
+		}
+	}
+
+}
+
+a {
+	&:hover .arrow {
+		&.left {
+			&::after {
+				border-color: var(--arrow-color-hover);
+			}
+		}
+
+		&.left {
+			&::after {
+				box-shadow: calc( var(--arrow-size) / -8 ) calc( var(--arrow-size) / -8 ) 0 var(--arrow-color);
+			}
+		}
+	}
+}
+
+
+ /* HEART */
+ .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+  }
+  
+  .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+    transition: 100ms;
+    margin-top: 10px;
+    margin-left: 200px;
+  }
+  
+  .checkmark {
+    top: 0;
+    left: 0;
+    height: 2em;
+    width: 2em;
+    transition: 100ms;
+    animation: dislike_effect 400ms ease;
+  }
+  
+  .container input:checked ~ .checkmark path {
+    fill: #FF5353;
+    stroke-width: 0;
+  }
+  
+  .container input:checked ~ .checkmark {
+    animation: like_effect 400ms ease;
+  }
+  
+  .container:hover {
+    transform: scale(1.1);
+  }
+  
+  @keyframes like_effect {
+    0% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes dislike_effect {
+    0% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+/* POKEMON INFORMATION */
+
+.information{
+    margin: 10px;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-font); 
+}
+
+.number{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-font); 
+}
+
+.type{
+    color: var(--color-font);
+    margin: 10px;
+    border: 1px solid var(--color-font);
+    border-radius: 10px;
+    background-color: var(--color-pokemon-plant);
+    font-size: 12px;
+}
+
+/* POKEMON IMAGE */
+
+.image_pokemon{
+    width: 220px;
+    margin-top: -30px;
+    margin-bottom: -140px;
+    z-index: 1; 
+}
+
+/* TABS INFORMATION */
+
+.statistics{
+    background-color: var(--color-background-statistics);
+    width: 400px;
+    height: 100%;
+    border-radius: 30px 30px 30px 30px;
+    margin-left: -13px;
+    margin-bottom: -3px;
+    margin-top: 100px;
+    z-index: -1; 
+}
+
+
+/* TABS INFORMATION - TABS */
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: transparent;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+  }tuning4
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    border-bottom: 2px solid var(--color_bottom-tab);
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    border-bottom: 2px solid var(--color_bottom-tab);
+
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    margin-top: 15px;
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+
+
+  .titles p{
+    color: var(--color-about-title);
+    font-size: 12px;
+    margin-left: 20px;
+  }
+
+  .data{
+    color: var(--color-about-data);
+    font-size: 12px;
+  } 
+
+  .progress-red {
+    height: 10px;
+    border-radius: 10px;
+    margin-top: 2px;
+    margin-bottom: 30px;
+    background-color: var(--color-progressbar-red);
+  }
+
+  .progress-green{
+    height: 10px;
+    border-radius: 10px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    background-color: var(--color-progressbar-green);
+  }
+
+
+
+  .evolution{
+    width: 150px;
+    margin-left: -40px;
+  }
+
+  .evolution3{
+    width: 150px;
+    margin-left: 0px;
+  
+  }
+
+  #evolution{
+    width: 100%;
+
+  }
+
+  #arrow-left-evolution{
+    width: 30px;
+  }
+
+  .image_pokemon-shiny{
+    width: 220px;
+    margin-top: 10px;
+    
+  }
+
+  .description-title h6{
+    margin-top: 20px;
+    margin-left: 20px;
+
+  }
+  .description p{
+    font-size: 12px;
+    margin-left: 20px;
+
+  }

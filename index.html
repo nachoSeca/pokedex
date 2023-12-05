@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/nes.css/css/nes-core.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/2094/2094510.png"
+      type="image/png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="pokedex">
+        <div class="button_top">
+          <div class="button_top_blue"></div>
+          <div class="button_top_small">
+            <div class="button_top_red"></div>
+            <div class="button_top_yellow"></div>
+            <div class="button_top_green"></div>
+          </div>
+        </div>
+        <div class="information">
+          <h1 class="name"></h1>
+          <div class="image">
+            <img
+              class="image_pokemon"
+              id="image_pokemon"
+              src="https://images.wikidexcdn.net/mwuploads/wikidex/thumb/0/02/latest/20090125150654/Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png/800px-Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png"
+              alt="Pikachu"
+            />
+          </div>
+
+          <div class="characteristics">
+            <div class="hp">
+              <p>Hp: <span id="hp"></span></p>
+            </div>
+            <div class="attack">
+              <p>Attack: <span id="attack"></span></p>
+            </div>
+            <div class="defense">
+              <p>Defense: <span id="defense"></span></p>
+            </div>
+            <div class="special_attack">
+              <p>Special Attack: <span id="special_attack"></span></p>
+            </div>
+            <div class="special_defense">
+              <p>Special Defense: <span id="special_defense"></span></p>
+            </div>
+            <div class="speed">
+              <p>Speed: <span id="speed"></span></p>
+            </div>
+          </div>
+        </div>
+        <div class="button_bottom">
+          <div class="button_bottom_blue" id="button_bottom_blue"></div>
+          <div class="button_bottom_large">
+            <div class="button_bottom_green"></div>
+            <div class="button_bottom_yellow"></div>
+          </div>
+        </div>
+        <div class="search_pokemon">
+          <input
+            type="text"
+            id="pokemonName"
+            class="search_input"
+            placeholder="Search Pokemon"
+          />
+          <button class="btn-class-name" id="buttonSearch">
+            <span class="back"></span>
+            <span class="front"></span>
+          </button>
+        </div>
+      </div>
+      <div class="pokedex-information">
+        <div class="additional_information">
+          <h3>Additional Information</h3>
+          <p id="error" style="display: none"></p>
+          <div class="row">
+            <div class="col-4">
+              <div class="type"><span>Electrik</span></div>
+            </div>
+            <div class="col-4 text-end">
+              <div class="number"><span># 20</span></div>
+            </div>
+          </div>
+          <div class="row characteristics-additional">
+            <div class="col-3">
+              <div class="hability">Punch</div>
+            </div>
+          </div>
+
+          <div class="characteristics-additional"></div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
