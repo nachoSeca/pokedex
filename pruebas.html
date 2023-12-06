@@ -23,9 +23,28 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <!-- W3 CSS-->
+    <!-- Nes CSS-->
+    <!-- minify -->
+    <link
+      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <!-- latest -->
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <!-- core style only -->
+    <link
+      href="https://unpkg.com/nes.css/css/nes-core.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
 
-    <!-- Course CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/pruebas.css" />
   </head>
   <body class="">
@@ -109,6 +128,12 @@
             <div class="col-4 text-center">
               <div id="type" class="type">Grass</div>
             </div>
+            <div class="col-4 text-center">
+              <div id="type" class="type">Grass</div>
+            </div>
+            <div class="col-4 text-center">
+              <div id="type" class="type">Grass</div>
+            </div>
           </div>
           <div class="image-pokemon">
             <div class="row">
@@ -116,7 +141,7 @@
                 <img
                   class="image_pokemon"
                   id="image_pokemon"
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png"
                   alt="pokemon"
                 />
               </div>
@@ -246,16 +271,18 @@
 
         <!-- RIGHT CARD -->
         <div class="col d-flex justify-content-end">
-          <div class="row">
-            <div class="col-6">
-              <div class="small-card">
-                <img
-                  class="image_pokemon-left"
-                  id="image_pokemon-left"
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
-                  alt="pokemon"
-                />
-              </div>
+          <div class="small-card">
+            <div class="row justify-content-between">
+              <div id="name-small" class="col-4">Ivysaur</div>
+              <div id="number-small" class="col-4">#002</div>
+            </div>
+            <div class="col-9 text-end">
+              <img
+                class="image_pokemon-right"
+                id="image_pokemon-right"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
+                alt="pokemon"
+              />
             </div>
           </div>
         </div>
