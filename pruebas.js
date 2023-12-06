@@ -54,8 +54,11 @@ fetch(API_URL)
     /*------------------------------*/
     const typeData = data.types;
     let aux = "";
-    typeData.forEach((types) => {
-      aux += types.type.name + ", ";
+    typeData.forEach((types, index) => {
+      aux += types.type.name;
+      if (index !== typeData.length - 1) {
+        aux += ", ";
+      }
     });
 
     type.innerHTML = aux;
@@ -68,8 +71,11 @@ fetch(API_URL)
 
     const abilitiesData = data.abilities;
     let aux1 = "";
-    abilitiesData.forEach((ability) => {
-      aux1 += ability.ability.name + ", ";
+    abilitiesData.forEach((ability, index) => {
+      aux1 += ability.ability.name;
+      if (index !== abilitiesData.length - 1) {
+        aux1 += ", ";
+      }
     });
     abilities.innerHTML = aux1;
   });
