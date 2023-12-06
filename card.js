@@ -15,7 +15,7 @@ function openCity(evt, cityName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
-const arrow = document.getElementById("arrow-left");
+/* const arrow = document.getElementById("arrow-left");
 arrow.addEventListener("click", () => {
   window.location.href = "initial.html";
-});
+}); */
