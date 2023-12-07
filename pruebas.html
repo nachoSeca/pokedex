@@ -49,7 +49,7 @@
   </head>
   <body class="">
     <div class="container-fluid text-center vh-100">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col">
           <input type="checkbox" id="active" />
           <label for="active" class="menu-btn"><span></span></label>
@@ -69,7 +69,7 @@
                       placeholder="Name / Number"
                     />
                   </div>
-                  <div class="botton-search">
+                  <div class="botton-search" id="button-search">
                     <button type="button" class="nes-btn is-warning">
                       Search Pokémon
                     </button>
@@ -79,7 +79,32 @@
             </ul>
           </div>
         </div>
+      </div> -->
+
+      <!-- SEARCH BAR -->
+      <div class="row">
+        <div class="col-12">
+          <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+              <form>
+                <input
+                  type="text"
+                  placeholder="Name / Number"
+                  id="pokemonName"
+                  name="search"
+                />
+                <button type="button" id="buttonSearch">
+                  <i class="fa fa-search">Search</i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="row align-items-center vh-100">
         <!-- LEFT CARD -->
         <div class="col-sm">
