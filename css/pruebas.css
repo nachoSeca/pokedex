@@ -125,13 +125,14 @@
 
 /* LEFT CARD */
 
-.small-card{
+.cardSmall{
     width: 200px;
     height: 130px;
     background-color: var(--color-pokemon-plant);
     color: var(--color-font);
     border-radius: 15px;
 }
+
 
 .image_pokemon-left, .image_pokemon-right{
     width: 100px;  

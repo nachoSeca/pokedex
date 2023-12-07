@@ -20,11 +20,17 @@ const description = document.getElementById("description");
 
 const BUTTONSEARCH = document.getElementById("buttonSearch");
 const POKEMONCARD = document.getElementById("pokemonCard");
+const NAME_SMALL_LEFT = document.getElementById("name-small-left");
+const NUMBER_SMALL_LEFT = document.getElementById("number-small-left");
+const NAME_SMALL_RIGTH = document.getElementById("name-small-rigth");
+const NUMBER_SMALL_RIGTH = document.getElementById("number-small-rigth");
 
 //CONSTATNTE PARA IMAGEN VARIA COLOR POKEMON
 /* let color2 = "";
  */
+
 BUTTONSEARCH.addEventListener("click", () => {
+  let nameleftPokemon = "";
   const API_URL =
     "http://pokeapi.co/api/v2/pokemon/" +
     document.getElementById("pokemonName").value;
@@ -36,6 +42,7 @@ BUTTONSEARCH.addEventListener("click", () => {
       const name = data.forms[0].name;
       pokemonName.innerHTML = name;
       const orderData = data.id;
+      nameleftPokemon = orderData;
       if (orderData < 10) {
         order.innerHTML = "#00" + orderData;
       } else if (orderData < 100) {
@@ -68,6 +75,8 @@ BUTTONSEARCH.addEventListener("click", () => {
           aux += ", ";
         }
       });
+      type.innerHTML = aux;
+
       /* CHANGE COLOR CARD POKEMON */
       color = typeData[0].type.name;
       switch (color) {
@@ -145,8 +154,6 @@ BUTTONSEARCH.addEventListener("click", () => {
           break;
       }
 
-      type.innerHTML = aux;
-
       const heightData = data.height;
       height.innerHTML = heightData;
 
@@ -182,5 +189,17 @@ BUTTONSEARCH.addEventListener("click", () => {
 
       const descriptionData = data.flavor_text_entries[8].flavor_text;
       description.innerHTML = descriptionData;
+    });
+  console.log("hola " + nameleftPokemon);
+  /* SMALL CARD LEFT */
+  let pokemonLeftName1 = parseInt(nameleftPokemon) - 1;
+  const API_URL3 = "http://pokeapi.co/api/v2/pokemon/" + pokemonLeftName1;
+  fetch(API_URL3)
+    .then((response) => response.json())
+    .then((data) => {
+      let nameSmallLeft = data.forms[0].name;
+      NAME_SMALL_LEFT.innerHTML = nameSmallLeft;
+      let numberSmallLeft = data.id;
+      NUMBER_SMALL_LEFT.innerHTML = numberSmallLeft;
     });
 });
