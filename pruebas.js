@@ -19,6 +19,7 @@ const habitat = document.getElementById("habitat");
 const description = document.getElementById("description");
 
 const BUTTONSEARCH = document.getElementById("buttonSearch");
+const POKEMONCARD = document.getElementById("pokemonCard");
 
 //CONSTATNTE PARA IMAGEN VARIA COLOR POKEMON
 /* let color2 = "";
@@ -60,12 +61,89 @@ BUTTONSEARCH.addEventListener("click", () => {
       /*------------------------------*/
       const typeData = data.types;
       let aux = "";
+      let color = "";
       typeData.forEach((types, index) => {
         aux += types.type.name;
         if (index !== typeData.length - 1) {
           aux += ", ";
         }
       });
+      /* CHANGE COLOR CARD POKEMON */
+      color = typeData[0].type.name;
+      switch (color) {
+        case "grass":
+          type.style.backgroundColor = "var(--color-pokemon-grass)";
+          POKEMONCARD.style.backgroundImage = "url(/images/grass.png)";
+          break;
+        case "fire":
+          type.style.backgroundColor = "var(--color-pokemon-fire)";
+          POKEMONCARD.style.backgroundImage = "url(/images/fire.png)";
+          break;
+        case "water":
+          type.style.backgroundColor = "var(--color-pokemon-water)";
+          POKEMONCARD.style.backgroundImage = "url(/images/water.png)";
+          break;
+        case "electric":
+          type.style.backgroundColor = "var(--color-pokemon-electric)";
+          POKEMONCARD.style.backgroundImage = "url(/images/electric.png)";
+          break;
+        case "normal":
+          type.style.backgroundColor = "var(--color-pokemon-normal)";
+          POKEMONCARD.style.backgroundImage = "url(/images/normal.png)";
+          break;
+        case "fighting":
+          type.style.backgroundColor = "var(--color-pokemon-fighting)";
+          POKEMONCARD.style.backgroundImage = "url(/images/fighting.png)";
+          break;
+        case "poison":
+          type.style.backgroundColor = "var(--color-pokemon-poison)";
+          POKEMONCARD.style.backgroundImage = "url(/images/poison.png)";
+          break;
+        case "ground":
+          type.style.backgroundColor = "var(--color-pokemon-ground)";
+          POKEMONCARD.style.backgroundImage = "url(/images/ground.png)";
+          break;
+        case "flying":
+          type.style.backgroundColor = "var(--color-pokemon-flying)";
+          POKEMONCARD.style.backgroundImage = "url(/images/flying.png)";
+          break;
+        case "psychic":
+          type.style.backgroundColor = "var(--color-pokemon-psychic)";
+          POKEMONCARD.style.backgroundImage = "url(/images/psychic.png)";
+          break;
+        case "bug":
+          type.style.backgroundColor = "var(--color-pokemon-bug)";
+          POKEMONCARD.style.backgroundImage = "url(/images/bug.png)";
+          break;
+        case "rock":
+          type.style.backgroundColor = "var(--color-pokemon-rock)";
+          POKEMONCARD.style.backgroundImage = "url(/images/rock.png)";
+          break;
+        case "ghost":
+          type.style.backgroundColor = "var(--color-pokemon-ghost)";
+          POKEMONCARD.style.backgroundImage = "url(/images/ghost.png)";
+          break;
+        case "dragon":
+          type.style.backgroundColor = "var(--color-pokemon-dragon)";
+          POKEMONCARD.style.backgroundImage = "url(/images/dragon.png)";
+          break;
+        case "dark":
+          type.style.backgroundColor = "var(--color-pokemon-dark)";
+          POKEMONCARD.style.backgroundImage = "url(/images/dark.png)";
+          break;
+        case "steel":
+          type.style.backgroundColor = "var(--color-pokemon-steel)";
+          POKEMONCARD.style.backgroundImage = "url(/images/steel.png)";
+          break;
+        case "fairy":
+          type.style.backgroundColor = "var(--color-pokemon-fairy)";
+          POKEMONCARD.style.backgroundImage = "url(/images/fairy.png)";
+          break;
+        case "ice":
+          type.style.backgroundColor = "var(--color-pokemon-ice)";
+          POKEMONCARD.style.backgroundImage = "url(/images/ice.png)";
+          break;
+      }
 
       type.innerHTML = aux;
 
