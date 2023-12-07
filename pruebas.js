@@ -82,75 +82,75 @@ BUTTONSEARCH.addEventListener("click", () => {
       switch (color) {
         case "grass":
           type.style.backgroundColor = "var(--color-pokemon-grass)";
-          POKEMONCARD.style.backgroundImage = "url(/images/grass.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/grass.png)";
           break;
         case "fire":
           type.style.backgroundColor = "var(--color-pokemon-fire)";
-          POKEMONCARD.style.backgroundImage = "url(/images/fire.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/fire.png)";
           break;
         case "water":
           type.style.backgroundColor = "var(--color-pokemon-water)";
-          POKEMONCARD.style.backgroundImage = "url(/images/water.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/water.png)";
           break;
         case "electric":
           type.style.backgroundColor = "var(--color-pokemon-electric)";
-          POKEMONCARD.style.backgroundImage = "url(/images/electric.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/electric.png)";
           break;
         case "normal":
           type.style.backgroundColor = "var(--color-pokemon-normal)";
-          POKEMONCARD.style.backgroundImage = "url(/images/normal.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/normal.png)";
           break;
         case "fighting":
           type.style.backgroundColor = "var(--color-pokemon-fighting)";
-          POKEMONCARD.style.backgroundImage = "url(/images/fighting.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/fighting.png)";
           break;
         case "poison":
           type.style.backgroundColor = "var(--color-pokemon-poison)";
-          POKEMONCARD.style.backgroundImage = "url(/images/poison.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/poison.png)";
           break;
         case "ground":
           type.style.backgroundColor = "var(--color-pokemon-ground)";
-          POKEMONCARD.style.backgroundImage = "url(/images/ground.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/ground.png)";
           break;
         case "flying":
           type.style.backgroundColor = "var(--color-pokemon-flying)";
-          POKEMONCARD.style.backgroundImage = "url(/images/flying.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/flying.png)";
           break;
         case "psychic":
           type.style.backgroundColor = "var(--color-pokemon-psychic)";
-          POKEMONCARD.style.backgroundImage = "url(/images/psychic.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/psychic.png)";
           break;
         case "bug":
           type.style.backgroundColor = "var(--color-pokemon-bug)";
-          POKEMONCARD.style.backgroundImage = "url(/images/bug.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/bug.png)";
           break;
         case "rock":
           type.style.backgroundColor = "var(--color-pokemon-rock)";
-          POKEMONCARD.style.backgroundImage = "url(/images/rock.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/rock.png)";
           break;
         case "ghost":
           type.style.backgroundColor = "var(--color-pokemon-ghost)";
-          POKEMONCARD.style.backgroundImage = "url(/images/ghost.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/ghost.png)";
           break;
         case "dragon":
           type.style.backgroundColor = "var(--color-pokemon-dragon)";
-          POKEMONCARD.style.backgroundImage = "url(/images/dragon.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/dragon.png)";
           break;
         case "dark":
           type.style.backgroundColor = "var(--color-pokemon-dark)";
-          POKEMONCARD.style.backgroundImage = "url(/images/dark.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/dark.png)";
           break;
         case "steel":
           type.style.backgroundColor = "var(--color-pokemon-steel)";
-          POKEMONCARD.style.backgroundImage = "url(/images/steel.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/steel.png)";
           break;
         case "fairy":
           type.style.backgroundColor = "var(--color-pokemon-fairy)";
-          POKEMONCARD.style.backgroundImage = "url(/images/fairy.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/fairy.png)";
           break;
         case "ice":
           type.style.backgroundColor = "var(--color-pokemon-ice)";
-          POKEMONCARD.style.backgroundImage = "url(/images/ice.png)";
+          POKEMONCARD.style.backgroundImage = "url(./images/ice.png)";
           break;
       }
 
@@ -189,17 +189,5 @@ BUTTONSEARCH.addEventListener("click", () => {
 
       const descriptionData = data.flavor_text_entries[8].flavor_text;
       description.innerHTML = descriptionData;
-    });
-  console.log("hola " + nameleftPokemon);
-  /* SMALL CARD LEFT */
-  let pokemonLeftName1 = parseInt(nameleftPokemon) - 1;
-  const API_URL3 = "http://pokeapi.co/api/v2/pokemon/" + pokemonLeftName1;
-  fetch(API_URL3)
-    .then((response) => response.json())
-    .then((data) => {
-      let nameSmallLeft = data.forms[0].name;
-      NAME_SMALL_LEFT.innerHTML = nameSmallLeft;
-      let numberSmallLeft = data.id;
-      NUMBER_SMALL_LEFT.innerHTML = numberSmallLeft;
     });
 });
