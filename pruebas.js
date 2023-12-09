@@ -21,6 +21,13 @@ const description = document.getElementById("description");
 const BUTTONSEARCH = document.getElementById("buttonSearch");
 const POKEMONCARD = document.getElementById("pokemonCard");
 
+const PROGRESS_RED1 = document.getElementById("progress-red1");
+const PROGRESS_RED2 = document.getElementById("progress-red2");
+const PROGRESS_RED3 = document.getElementById("progress-red3");
+const PROGRESS_GREEN1 = document.getElementById("progress-green1");
+const PROGRESS_GREEN2 = document.getElementById("progress-green2");
+const PROGRESS_GREEN3 = document.getElementById("progress-green3");
+
 //CONSTATNTE PARA IMAGEN VARIA COLOR POKEMON
 /* let color2 = "";
  */
@@ -45,16 +52,22 @@ BUTTONSEARCH.addEventListener("click", () => {
       } else order.innerHTML = "#" + orderData;
       const hpData = data.stats[0].base_stat;
       hp.innerHTML = hpData;
+      PROGRESS_RED1.style.width = hpData + "%";
       const attackData = data.stats[1].base_stat;
       attack.innerHTML = attackData;
+      PROGRESS_GREEN1.style.width = attackData + "%";
       const defenseData = data.stats[2].base_stat;
       defense.innerHTML = defenseData;
+      PROGRESS_RED2.style.width = defenseData + "%";
       const special_attackData = data.stats[3].base_stat;
       special_attack.innerHTML = special_attackData;
+      PROGRESS_GREEN2.style.width = special_attackData + "%";
       const special_defenseData = data.stats[4].base_stat;
       special_defense.innerHTML = special_defenseData;
+      PROGRESS_RED3.style.width = special_defenseData + "%";
       const speedData = data.stats[5].base_stat;
       speed.innerHTML = speedData;
+      PROGRESS_GREEN3.style.width = speedData + "%";
       const image = data.sprites.other["official-artwork"].front_default;
       pokemonImage.setAttribute("src", image);
       const color2 = data.sprites.other["official-artwork"].front_shiny;
