@@ -20,17 +20,12 @@ const description = document.getElementById("description");
 
 const BUTTONSEARCH = document.getElementById("buttonSearch");
 const POKEMONCARD = document.getElementById("pokemonCard");
-const NAME_SMALL_LEFT = document.getElementById("name-small-left");
-const NUMBER_SMALL_LEFT = document.getElementById("number-small-left");
-const NAME_SMALL_RIGTH = document.getElementById("name-small-rigth");
-const NUMBER_SMALL_RIGTH = document.getElementById("number-small-rigth");
 
 //CONSTATNTE PARA IMAGEN VARIA COLOR POKEMON
 /* let color2 = "";
  */
 
 BUTTONSEARCH.addEventListener("click", () => {
-  let nameleftPokemon = "";
   const API_URL =
     "http://pokeapi.co/api/v2/pokemon/" +
     document.getElementById("pokemonName").value;
@@ -41,8 +36,8 @@ BUTTONSEARCH.addEventListener("click", () => {
        */
       const name = data.forms[0].name;
       pokemonName.innerHTML = name;
+      nameleftPokemon = name;
       const orderData = data.id;
-      nameleftPokemon = orderData;
       if (orderData < 10) {
         order.innerHTML = "#00" + orderData;
       } else if (orderData < 100) {
