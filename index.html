@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokédex</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://unpkg.com/nes.css/css/nes-core.min.css"
       rel="stylesheet"
@@ -89,19 +89,31 @@
           <h3>Additional Information</h3>
           <p id="error" style="display: none"></p>
           <div class="row">
-            <div class="col-4">
-              <div class="type"><span>Electrik</span></div>
-            </div>
-            <div class="col-4 text-end">
-              <div class="number"><span># 20</span></div>
+            <div class="col-4"></div>
+            <div class="col-6 text-end">
+              <div class="number"><span id="order"></span></div>
             </div>
           </div>
-          <div class="row characteristics-additional">
-            <div class="col-3">
-              <div class="hability">Punch</div>
-            </div>
+          <!--Cambios 05/12 Rocio -->
+          <div class="type">
+            <p>Type: <span id="type"></span></p>
           </div>
-
+          <div class="habitat">
+            <p>Habitat: <span id="habitat"></span></p>
+          </div>
+          <div class="height">
+            <p>Height: <span id="height"></span></p>
+          </div>
+          <div class="weight">
+            <p>Weight: <span id="weight"></span></p>
+          </div>
+          <div class="abilities">
+            <p>Abilities: <span id="abilities"></span></p>
+          </div>
+          <div class="description">
+            <p>Description: <span id="description"></span></p>
+          </div>
+          <!---->
           <div class="characteristics-additional"></div>
         </div>
       </div>
