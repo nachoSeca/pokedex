@@ -54,14 +54,20 @@ buttonSearch.addEventListener("click", () => {
 
       const typeData = data.types;
       let aux = "";
-      typeData.forEach((types) => {
-        aux += types.type.name + ", ";
+      typeData.forEach((types, index) => {
+        aux += types.type.name;
+        if (index !== typeData.length - 1) {
+          aux += ", ";
+        }
       });
-
       type.innerHTML = aux;
 
       const orderData = data.id;
-      order.innerHTML = "# " + orderData;
+      if (orderData < 10) {
+        order.innerHTML = "#00" + orderData;
+      } else if (orderData < 100) {
+        order.innerHTML = "#0" + orderData;
+      } else order.innerHTML = "#" + orderData;
 
       const heightData = data.height;
       height.innerHTML = heightData;
@@ -71,8 +77,11 @@ buttonSearch.addEventListener("click", () => {
 
       const abilitiesData = data.abilities;
       let aux1 = "";
-      abilitiesData.forEach((ability) => {
-        aux1 += ability.ability.name + ", ";
+      abilitiesData.forEach((ability, index) => {
+        aux1 += ability.ability.name;
+        if (index !== abilitiesData.length - 1) {
+          aux1 += ", ";
+        }
       });
       abilities.innerHTML = aux1;
 
@@ -84,7 +93,7 @@ buttonSearch.addEventListener("click", () => {
     });
 });
 
-document.getElementById("button_bottom_blue").addEventListener("click", () => {
+document.getElementById("ball").addEventListener("click", () => {
   pokemonImage.setAttribute("src", color2);
 });
 
