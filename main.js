@@ -10,7 +10,15 @@ const speed = document.getElementById("speed");
 const errorMessage = document.getElementById("error");
 const pokemonImage = document.getElementById("image_pokemon");
 const buttonSearch = document.getElementById("buttonSearch");
+//cambios rocio
+const type = document.getElementById("type");
+const height = document.getElementById("height");
+const weight = document.getElementById("weight");
+const abilities = document.getElementById("abilities");
+const order = document.getElementById("order");
 
+const habitat = document.getElementById("habitat");
+const description = document.getElementById("description");
 
 //CONSTATNTE PARA IMAGEN VARIA COLOR POKEMON
 let color2 = "";
@@ -38,23 +46,77 @@ buttonSearch.addEventListener("click", () => {
       const speedData = data.stats[5].base_stat;
       speed.innerHTML = speedData;
       const image = data.sprites.front_default;
+      //10025 no tiene variacolor añadir mensaje o oimagen en ese caso
       pokemonImage.setAttribute("src", image);
       color2 = data.sprites.front_shiny;
+
+      //añadidos rocio  - - - - - - - - - - - - - - -- - - ---
+
+      const typeData = data.types;
+      let aux = "";
+      typeData.forEach((types) => {
+        aux += types.type.name + ", ";
+      });
+
+      type.innerHTML = aux;
+
+      const orderData = data.id;
+      order.innerHTML = "# " + orderData;
+
+      const heightData = data.height;
+      height.innerHTML = heightData;
+
+      const weightData = data.weight;
+      weight.innerHTML = weightData;
+
+      const abilitiesData = data.abilities;
+      let aux1 = "";
+      abilitiesData.forEach((ability) => {
+        aux1 += ability.ability.name + ", ";
+      });
+      abilities.innerHTML = aux1;
+
+      //- - - - - - -  -- - - -- - -fin cambios rocio - -- - -- - - - -- - - -  --
     })
     .catch(() => {
-      errorMessage.innerHTML = "Error al obtener los datos de la API";
-      errorMessage.style.display = "block";
+      //errorMessage.innerHTML = "Error al obtener los datos de la API Pokemon";
+      //errorMessage.style.display = "block";
     });
-  });
-  
-  document.getElementById("button_bottom_blue").addEventListener("click", () => {
-    pokemonImage.setAttribute("src", color2);
-  })
+});
 
-// PREGUNTA A ISMA SI ES BUENO HACER UNA LLAMDA PARA CADA DATO O HACERLO TODO EN LA PRIMERA LLAMADA
-// fetch(API_URL)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     const name = data.stats[0].base_stat;
-//     hp.innerHTML = name;
-//   });
+document.getElementById("button_bottom_blue").addEventListener("click", () => {
+  pokemonImage.setAttribute("src", color2);
+});
+
+//- - - - - - - - - Segunda consulta a la API By Rocio
+
+buttonSearch.addEventListener("click", () => {
+  const API_URL =
+    "http://pokeapi.co/api/v2/pokemon-species/" +
+    document.getElementById("pokemonName").value;
+  fetch(API_URL)
+    .then((response) => response.json())
+    .then((data) => {
+      errorMessage.style.display = "none";
+
+      const habitatData = data.habitat.name;
+      habitat.innerHTML = habitatData;
+
+      const descriptionData = data.flavor_text_entries[8].flavor_text;
+      description.innerHTML = descriptionData;
+    })
+    .catch(() => {
+      //errorMessage.innerHTML = "Error al obtener los datos de la API Pokemon Species";
+      //errorMessage.style.display = "block";
+
+      if ((habitatData = "undefined")) {
+        habitat.innerHTML = "Desconocido";
+      }
+
+      if ((descriptionData = "undefined")) {
+        description.innerHTML = "Desconocido";
+      }
+    });
+});
+
+//- - - - - - -  -- - - -- -  fin cambios rocio segunda parte- - -- - -- - - - -- - - -  --
