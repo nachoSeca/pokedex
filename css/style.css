@@ -261,7 +261,7 @@ html {
     background-color: #ee0606d7;
     padding: 10px;
     margin: 10px;
-    margin-left: -14px;
+    margin-left: -35px;
     width: 350px;
     height: 500px;
     float: left;
@@ -300,13 +300,6 @@ html {
 .additional_information{
     margin-left: 10x;
 }
-
-.type{
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
 
 
 

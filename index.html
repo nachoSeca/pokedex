@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokédex</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://unpkg.com/nes.css/css/nes-core.min.css"
       rel="stylesheet"
@@ -23,98 +23,114 @@
   </head>
   <body>
     <div class="container">
-      <div class="pokedex">
-        <div class="button_top">
-          <div class="button_top_blue"></div>
-          <div class="button_top_small">
-            <div class="button_top_red"></div>
-            <div class="button_top_yellow"></div>
-            <div class="button_top_green"></div>
-          </div>
-        </div>
-        <div class="information">
-          <h1 class="name"></h1>
-          <div class="image">
-            <img
-              class="image_pokemon"
-              id="image_pokemon"
-              src="https://images.wikidexcdn.net/mwuploads/wikidex/thumb/0/02/latest/20090125150654/Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png/800px-Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png"
-              alt="Pikachu"
-            />
-          </div>
-
-          <div class="characteristics">
-            <div class="hp">
-              <p>Hp: <span id="hp"></span></p>
-            </div>
-            <div class="attack">
-              <p>Attack: <span id="attack"></span></p>
-            </div>
-            <div class="defense">
-              <p>Defense: <span id="defense"></span></p>
-            </div>
-            <div class="special_attack">
-              <p>Special Attack: <span id="special_attack"></span></p>
-            </div>
-            <div class="special_defense">
-              <p>Special Defense: <span id="special_defense"></span></p>
-            </div>
-            <div class="speed">
-              <p>Speed: <span id="speed"></span></p>
-            </div>
-          </div>
-        </div>
-        <div class="button_bottom">
-          <div class="button_bottom_blue" id="button_bottom_blue"></div>
-          <div class="button_bottom_large">
-            <div class="button_bottom_green"></div>
-            <div class="button_bottom_yellow"></div>
-          </div>
-        </div>
-        <div class="search_pokemon">
-          <input
-            type="text"
-            id="pokemonName"
-            class="search_input"
-            placeholder="Search Pokemon"
+      <div class="row">
+        <div class="col-12 text-center">
+          <img
+            class="pokedex_logo"
+            id="pokedex_logo"
+            src="images/Pokédex_logo.png"
+            alt="Pokédex Logo"
           />
-          <button class="btn-class-name" id="buttonSearch">
-            <span class="back"></span>
-            <span class="front"></span>
-          </button>
         </div>
       </div>
-      <div class="pokedex-information">
-        <div class="additional_information">
-          <h3>Additional Information</h3>
-          <p id="error" style="display: none"></p>
-          <div class="row">
-            <div class="col-4"></div>
-            <div class="col-6 text-end">
-              <div class="number"><span id="order"></span></div>
+      <div class="row">
+        <div class="col-6 d-flex justify-content-end">
+          <div class="pokedex">
+            <div class="button_top">
+              <div class="button_top_blue"></div>
+              <div class="button_top_small">
+                <div class="button_top_red"></div>
+                <div class="button_top_yellow"></div>
+                <div class="button_top_green"></div>
+              </div>
+            </div>
+            <div class="information">
+              <h1 class="name"></h1>
+              <div class="image">
+                <img
+                  class="image_pokemon"
+                  id="image_pokemon"
+                  src="https://images.wikidexcdn.net/mwuploads/wikidex/thumb/0/02/latest/20090125150654/Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png/800px-Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png"
+                  alt="Pikachu"
+                />
+              </div>
+
+              <div class="characteristics">
+                <div class="hp">
+                  <p>Hp: <span id="hp"></span></p>
+                </div>
+                <div class="attack">
+                  <p>Attack: <span id="attack"></span></p>
+                </div>
+                <div class="defense">
+                  <p>Defense: <span id="defense"></span></p>
+                </div>
+                <div class="special_attack">
+                  <p>Special Attack: <span id="special_attack"></span></p>
+                </div>
+                <div class="special_defense">
+                  <p>Special Defense: <span id="special_defense"></span></p>
+                </div>
+                <div class="speed">
+                  <p>Speed: <span id="speed"></span></p>
+                </div>
+              </div>
+            </div>
+            <div class="button_bottom">
+              <div class="button_bottom_blue" id="button_bottom_blue"></div>
+              <div class="button_bottom_large">
+                <div class="button_bottom_green"></div>
+                <div class="button_bottom_yellow"></div>
+              </div>
+            </div>
+            <div class="search_pokemon">
+              <input
+                type="text"
+                id="pokemonName"
+                class="search_input"
+                placeholder="Search Pokemon"
+              />
+              <button class="btn-class-name" id="buttonSearch">
+                <span class="back"></span>
+                <span class="front"></span>
+              </button>
             </div>
           </div>
-          <!--Cambios 05/12 Rocio -->
-          <div class="type">
-            <p>Type: <span id="type"></span></p>
+        </div>
+        <div class="col-6">
+          <div class="pokedex-information">
+            <div class="additional_information">
+              <h3>Additional Information</h3>
+              <p id="error" style="display: none"></p>
+              <div class="row">
+                <div class="col-4"></div>
+                <div class="col-6 text-end">
+                  <div class="number"><span id="order"></span></div>
+                </div>
+              </div>
+              <!--Cambios 05/12 Rocio -->
+              <div class="type">
+                <p>Type: <span id="type"></span></p>
+              </div>
+              <div class="habitat">
+                <p>Habitat: <span id="habitat"></span></p>
+              </div>
+              <div class="height">
+                <p>Height: <span id="height"></span></p>
+              </div>
+              <div class="weight">
+                <p>Weight: <span id="weight"></span></p>
+              </div>
+              <div class="abilities">
+                <p>Abilities: <span id="abilities"></span></p>
+              </div>
+              <div class="description">
+                <p>Description: <span id="description"></span></p>
+              </div>
+              <!---->
+              <div class="characteristics-additional"></div>
+            </div>
           </div>
-          <div class="habitat">
-            <p>Habitat: <span id="habitat"></span></p>
-          </div>
-          <div class="height">
-            <p>Height: <span id="height"></span></p>
-          </div>
-          <div class="weight">
-            <p>Weight: <span id="weight"></span></p>
-          </div>
-          <div class="abilities">
-            <p>Abilities: <span id="abilities"></span></p>
-          </div>
-          <div class="description">
-            <p>Description: <span id="description"></span></p>
-          </div>
-          <!---->
-          <div class="characteristics-additional"></div>
         </div>
       </div>
     </div>
