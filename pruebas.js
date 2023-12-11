@@ -41,37 +41,27 @@ BUTTONSEARCH.addEventListener("click", () => {
     .then((data) => {
       /*     errorMessage.style.display = "none";
        */
-      const name = data.forms[0].name;
-      pokemonName.innerHTML = name;
-      nameleftPokemon = name;
-      const orderData = data.id;
-      if (orderData < 10) {
-        order.innerHTML = "#00" + orderData;
-      } else if (orderData < 100) {
-        order.innerHTML = "#0" + orderData;
-      } else order.innerHTML = "#" + orderData;
-      const hpData = data.stats[0].base_stat;
-      hp.innerHTML = hpData;
-      PROGRESS_RED1.style.width = hpData + "%";
-      const attackData = data.stats[1].base_stat;
-      attack.innerHTML = attackData;
-      PROGRESS_GREEN1.style.width = attackData + "%";
-      const defenseData = data.stats[2].base_stat;
-      defense.innerHTML = defenseData;
-      PROGRESS_RED2.style.width = defenseData + "%";
-      const special_attackData = data.stats[3].base_stat;
-      special_attack.innerHTML = special_attackData;
-      PROGRESS_GREEN2.style.width = special_attackData + "%";
-      const special_defenseData = data.stats[4].base_stat;
-      special_defense.innerHTML = special_defenseData;
-      PROGRESS_RED3.style.width = special_defenseData + "%";
-      const speedData = data.stats[5].base_stat;
-      speed.innerHTML = speedData;
-      PROGRESS_GREEN3.style.width = speedData + "%";
-      const image = data.sprites.other["official-artwork"].front_default;
-      pokemonImage.setAttribute("src", image);
-      const color2 = data.sprites.other["official-artwork"].front_shiny;
-      image_pokemon_shiny.setAttribute("src", color2);
+      const pokemon = {
+        name: data.forms[0].name,
+        hp: data.stats[0].base_stat,
+        attack: data.stats[1].base_stat,
+        defense: data.stats[2].base_stat,
+        special_attack: data.stats[3].base_stat,
+        special_defense: data.stats[4].base_stat,
+        speed: data.stats[5].base_stat,
+        image: data.sprites.other["official-artwork"].front_default,
+        shiny: data.sprites.other["official-artwork"].front_shiny
+      };
+
+      pokemonName.innerHTML = pokemon.name;
+      hp.innerHTML = pokemon.hp;
+      attack.innerHTML = pokemon.attack;
+      defense.innerHTML = pokemon.defense;
+      special_attack.innerHTML = pokemon.special_attack;
+      special_defense.innerHTML = pokemon.special_defense;
+      speed.innerHTML = pokemon.speed;
+      pokemonImage.setAttribute("src", pokemon.image);
+      image_pokemon_shiny.setAttribute("src",  pokemon.shiny);
 
       /*------------------------------*/
       const typeData = data.types;
@@ -178,10 +168,6 @@ BUTTONSEARCH.addEventListener("click", () => {
       });
       abilities.innerHTML = aux1;
     });
-  /*  .catch(() => {
-        errorMessage.innerHTML = "Error al obtener los datos de la API";
-        errorMessage.style.display = "block";
-      }); */
 
   /* SEGUNDA COLSULTA A LA API BY ROCIO */
   const API_URL2 =
@@ -191,11 +177,21 @@ BUTTONSEARCH.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       //errorMessage.style.display = "none";
+      const habitatDescription = { // 
+        habitatData: data.habitat.name, 
+        descriptionData: data.flavor_text_entries[8].flavor_text
+      };
 
-      const habitatData = data.habitat.name;
-      habitat.innerHTML = habitatData;
+      habitat.innerHTML = habitatDescription.habitatData;
+      description.innerHTML = habitatDescription.descriptionData;
+    })
+    .catch(() => {
+      if ((habitatData = "undefined")) {
+        habitat.innerHTML = "Desconocido";
+      }
 
-      const descriptionData = data.flavor_text_entries[8].flavor_text;
-      description.innerHTML = descriptionData;
-    });
+      if ((descriptionData = "undefined")) {
+        description.innerHTML = "Desconocido";
+      }
+      })
 });
