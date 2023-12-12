@@ -30,7 +30,7 @@ buttonSearch.addEventListener("click", () => {
   fetch(API_URL)
     .then((response) => response.json())
     .then((data) => {
-      /* errorMessage.style.display = "none";
+      errorMessage.style.display = "none";
       const name = data.forms[0].name;
       pokemonName.innerHTML = name;
       const hpData = data.stats[0].base_stat;
@@ -45,44 +45,28 @@ buttonSearch.addEventListener("click", () => {
       special_defense.innerHTML = special_defenseData;
       const speedData = data.stats[5].base_stat;
       speed.innerHTML = speedData;
-      const image = data.sprites.front_default; */
+      const image = data.sprites.front_default;
       //10025 no tiene variacolor añadir mensaje o oimagen en ese caso
-        /* pokemonImage.setAttribute("src", image);
-        color2 = data.sprites.front_shiny; */
-
-      const pokemon = {
-        name: data.forms[0].name,
-        hp: data.stats[0].base_stat,
-        attack: data.stats[1].base_stat,
-        defense: data.stats[2].base_stat,
-        special_attack: data.stats[3].base_stat,
-        special_defense: data.stats[4].base_stat,
-        speed: data.stats[5].base_stat,
-        image: data.sprites.front_default,
-        shiny: data.sprites.front_shiny
-      };
-
-      pokemonName.innerHTML = pokemon.name;
-      hp.innerHTML = pokemon.hp;
-      attack.innerHTML = pokemon.attack;
-      defense.innerHTML = pokemon.defense;
-      special_attack.innerHTML = pokemon.special_attack;
-      special_defense.innerHTML = pokemon.special_defense;
-      speed.innerHTML = pokemon.speed;
-      pokemonImage.setAttribute("src", pokemon.image);
-      color2 = pokemon.shiny;
+      pokemonImage.setAttribute("src", image);
+      color2 = data.sprites.front_shiny;
 
       //añadidos rocio  - - - - - - - - - - - - - - -- - - ---
 
-      const typeData = data.types;
-      let aux = "";
-      typeData.forEach((types, index) => {
-        aux += types.type.name;
-        if (index !== typeData.length - 1) {
-          aux += ", ";
+      let type = document.getElementById("type");
+      typeData = data.types;
+      if (type) {
+        while (type.firstChild) {
+          type.removeChild(type.firstChild);
         }
+      }
+      typeData.forEach((types, index) => {
+        let titleType = document.createElement("p");
+        let viweType = document.createElement("span");
+        let typePokemon = types.type.name;
+        viweType.classList.add(typePokemon);
+        viweType.innerHTML = typePokemon;
+        type.appendChild(viweType);
       });
-      type.innerHTML = aux;
 
       const orderData = data.id;
       if (orderData < 10) {

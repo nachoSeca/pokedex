@@ -1,10 +1,10 @@
 /* GLOBAL VAR */
 :root{
     --color-font: #ffffff;
-    --color-pokemon-plant: #71cb89;
+    --color-pokemon-grass: #71cb89;
     --color-pokemon-fire: #f7786b;
     --color-pokemon-water: #76bdfe;
-    --color-pokemon-electric: #ffce4b;
+    --color-pokemon-electric: #fabf1b;
     --color-pokemon-normal: #a4acaf;
     --color-pokemon-fighting: #d56723;
     --color-pokemon-poison: #b97fc9;
@@ -288,6 +288,7 @@ a {
     font-size: 16px;
     font-weight: bold;
     color: var(--color-font); 
+    text-transform: capitalize;
 }
 
 .number{
@@ -296,20 +297,81 @@ a {
     color: var(--color-font); 
 }
 
-.type{
-    color: var(--color-font);
-    margin: 10px;
-    border: 1px solid var(--color-font);
-    border-radius: 10px;
-    background-color: var(--color-pokemon-plant);
-    font-size: 12px;
+
+
+.type span{
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 10px;
+  text-transform: capitalize;   
+  border: 1px solid black;
 }
+
+.grass{
+  background-color: var(--color-pokemon-grass);
+}
+.fire{
+  background-color: var(--color-pokemon-fire);
+}
+.water{
+  background-color: var(--color-pokemon-water);
+}
+.electric{
+  background-color: var(--color-pokemon-electric);
+}
+.normal{
+  background-color: var(--color-pokemon-normal);
+}
+.fighting{
+  background-color: var(--color-pokemon-fighting);
+}
+.poison{
+  background-color: var(--color-pokemon-poison);
+}
+.ground{
+  background-color: var(--color-pokemon-ground);
+}
+.flying{
+  background-color: var(--color-pokemon-flying);
+}
+.psychic{
+  background-color: var(--color-pokemon-psychic);
+}
+.bug{
+  background-color: var(--color-pokemon-bug);
+}
+.rock{
+  background-color: var(--color-pokemon-rock);
+}
+.ghost{
+  background-color: var(--color-pokemon-ghost);
+}
+.dragon{
+  background-color: var(--color-pokemon-dragon);
+}
+.dark{
+  background-color: var(--color-pokemon-dark);
+}
+.steel{
+  background-color: var(--color-pokemon-steel);
+}
+.fairy{
+  background-color: var(--color-pokemon-fairy);
+}
+.ice{
+  background-color: var(--color-pokemon-ice);
+}
+
+
 
 /* POKEMON IMAGE */
 
 .image_pokemon{
     width: 220px;
-    margin-top: -30px;
+    margin-top: -10px;
     margin-bottom: -140px;
     z-index: 1; 
 }
