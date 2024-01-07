@@ -31,6 +31,8 @@ body{
   background-image: url(../images/fondo-card.png);
  background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 

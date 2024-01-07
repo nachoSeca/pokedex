@@ -53,11 +53,17 @@ BUTTONSEARCH.addEventListener("click", () => {
 
       pokemonName.innerHTML = pokemon.name;
       hp.innerHTML = pokemon.hp;
+      PROGRESS_RED1.style.width = pokemon.hp + "%";
       attack.innerHTML = pokemon.attack;
+      PROGRESS_GREEN1.style.width = pokemon.attack + "%";
       defense.innerHTML = pokemon.defense;
+      PROGRESS_RED2.style.width = pokemon.defense + "%";
       special_attack.innerHTML = pokemon.special_attack;
+      PROGRESS_GREEN2.style.width = pokemon.special_attack + "%";
       special_defense.innerHTML = pokemon.special_defense;
+      PROGRESS_RED3.style.width = pokemon.special_defense + "%";
       speed.innerHTML = pokemon.speed;
+      PROGRESS_GREEN3.style.width = pokemon.speed + "%";
       pokemonImage.setAttribute("src", pokemon.image);
       image_pokemon_shiny.setAttribute("src", pokemon.shiny);
 
