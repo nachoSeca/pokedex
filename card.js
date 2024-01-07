@@ -28,9 +28,7 @@ const PROGRESS_GREEN1 = document.getElementById("progress-green1");
 const PROGRESS_GREEN2 = document.getElementById("progress-green2");
 const PROGRESS_GREEN3 = document.getElementById("progress-green3");
 
-//CONSTATNTE PARA IMAGEN VARIA COLOR POKEMON
-/* let color2 = "";
- */
+
 BUTTONSEARCH.addEventListener("click", () => {
   const API_URL =
     "http://pokeapi.co/api/v2/pokemon/" +
@@ -158,7 +156,6 @@ BUTTONSEARCH.addEventListener("click", () => {
       }
     });
 
-  /* SEGUNDA COLSULTA A LA API BY ROCIO */
   const API_URL2 =
     "http://pokeapi.co/api/v2/pokemon-species/" +
     document.getElementById("pokemonName").value;
@@ -198,6 +195,4 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-// Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
